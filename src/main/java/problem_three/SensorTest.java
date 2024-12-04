@@ -7,8 +7,8 @@ public class SensorTest {
                 new LightSensor("Living Room", 50.0),
                 new LightSensor("Garden", 150.0),
                 new SoundSensor("Bedroom", 80.0),
-                new TemparatureSensor("Kitchen", 35.0),
-                new TemparatureSensor("Bathroom", 15.0)
+                new TemperatureSensor("Kitchen", 35.0),
+                new TemperatureSensor("Bathroom", 15.0)
         };
 
         // Iterate through the array and print the sensor type, location, last updated, and action

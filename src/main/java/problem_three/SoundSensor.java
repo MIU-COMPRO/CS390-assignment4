@@ -17,7 +17,7 @@ public class SoundSensor implements Sensor {
      */
     @Override
     public String getSensorType() {
-        return "";
+        return "Sound Sensor";
     }
 
     /**
@@ -25,7 +25,7 @@ public class SoundSensor implements Sensor {
      */
     @Override
     public double getReading() {
-        return 0;
+        return soundLevel;
     }
 
     /**
@@ -33,7 +33,7 @@ public class SoundSensor implements Sensor {
      */
     @Override
     public String getLocation() {
-        return "";
+        return location;
     }
 
     /**
@@ -57,10 +57,10 @@ public class SoundSensor implements Sensor {
 
     @Override
     public String toString() {
-        return "Sensor Type: " + "Sound Sensor\n" +
-                "Reading: " + soundLevel + "\n" +
-                "Location: " + location + "\n" +
-                "Last Updated: " + lastUpdated.format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
+        return "Sensor Type: " + getSensorType() + "\n" +
+                "Reading: " + getReading() + "\n" +
+                "Location: " + getLocation() + "\n" +
+                "Last Updated: " + getLastUpdated().format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
                 "Action: " + performAction()+ "\n";
     }
 }

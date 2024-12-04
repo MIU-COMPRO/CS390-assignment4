@@ -19,7 +19,7 @@ public class LightSensor implements Sensor {
      */
     @Override
     public String getSensorType() {
-        return "";
+        return "Light Sensor";
     }
 
     /**
@@ -27,7 +27,7 @@ public class LightSensor implements Sensor {
      */
     @Override
     public double getReading() {
-        return 0.0;
+        return lightlevel;
     }
 
     /**
@@ -35,7 +35,7 @@ public class LightSensor implements Sensor {
      */
     @Override
     public String getLocation() {
-        return "";
+        return location;
     }
 
     /**
@@ -59,10 +59,10 @@ public class LightSensor implements Sensor {
 
     @Override
     public String toString() {
-        return "Sensor Type: " + "Light Sensor\n" +
-                "Reading: " + lightlevel + "\n" +
-                "Location: " + location + "\n" +
-                "Last Updated: " + lastUpdated.format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
+        return "Sensor Type: " + getSensorType() + "\n" +
+                "Reading: " + getReading() + "\n" +
+                "Location: " + getLocation() + "\n" +
+                "Last Updated: " + getLastUpdated().format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
                 "Action: " + performAction() + "\n";
     }
 }
