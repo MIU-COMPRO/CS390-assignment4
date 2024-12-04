@@ -12,17 +12,19 @@ public class TestClass {
             System.out.println(product);
         }
         //sum of all the products
-        System.out.println("Sum of the products: " + sumProducts(products));
-//        System.out.println("Sum of the products: " + sumProducts(null));
+        System.out.printf("Sum of the products: %.2f%n",sumProducts(products));
 
 
     }
     public static double sumProducts(Product[] col) {
-        if(col == null) throw new IllegalArgumentException("Product must not be null");
+        if (col == null) throw new IllegalArgumentException("Product array must not be null");
         double sum = 0.0;
-        for(Product product : col){
-            sum += product.getPrice();
+        for (Product product : col) {
+            if (product != null) {
+                sum += product.getPrice();
+            }
         }
         return sum;
     }
+
 }

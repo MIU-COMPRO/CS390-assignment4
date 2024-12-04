@@ -18,9 +18,11 @@ public class Electronics extends Product{
     public String toString() {
         return "Electronics{" +
                 "name='" + super.getName() + '\'' +
-                ", price=" + super.getPrice() +
+                ", original price=" + super.getPrice() +
+                ", final price (with warranty)=" + getPrice() +
                 ", warrantyInMonths=" + warrantyInMonths +
                 ", warrantyCost=" + warrantyCost +
                 "} ";
     }
+
 }

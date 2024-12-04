@@ -12,16 +12,18 @@ public class Clothing extends Product{
 
     @Override
     public double getPrice() {
-        return super.getPrice()-discountPercentage;
+        return super.getPrice() * (1 - discountPercentage);
     }
+
 
     @Override
     public String toString() {
         return "Clothing{" +
                 "name='" + super.getName() + '\'' +
-                ", price=" + super.getPrice() +
+                ", original price=" + super.getPrice() +
+                ", discounted price=" + getPrice() +
                 ", brand='" + brand + '\'' +
-                ", discountPercentage=" + discountPercentage +
+                ", discountPercentage=" + (discountPercentage * 100) + "%" +
                 "} ";
     }
 }

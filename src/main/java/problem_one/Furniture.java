@@ -18,9 +18,11 @@ public class Furniture extends Product{
     public String toString() {
         return "Furniture{" +
                 "name='" + super.getName() + '\'' +
-                ", price=" + super.getPrice() +
+                ", original price=" + super.getPrice() +
+                ", final price (with shipping)=" + getPrice() +
                 ", material='" + material + '\'' +
                 ", shippingCost=" + shippingCost +
                 "} ";
     }
+
 }
