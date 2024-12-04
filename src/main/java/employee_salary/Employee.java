@@ -27,15 +27,21 @@ public abstract class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;
     }
-
     public void setSocialSecurityNumber(String socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
-
     abstract public double getPayment();
+
+    @Override
+    public String toString() {
+        return
+                "First Name=" + getFirstName() + " " +
+                "Last Name=" + getLastName() + " " +
+                "SSN=" + getSocialSecurityNumber() + " " +
+                "Salary=" + getPayment();
+    }
 
 }
