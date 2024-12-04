@@ -14,7 +14,10 @@ public class Test {
     }
 
     public static Employee findMaxSalary(Employee[] coll){
-        if (coll == null) throw new IllegalArgumentException("Employee array must not be null");
+        // Check if the array is null or empty
+        if (coll == null || coll.length == 0) {
+            return null; // Return null to indicate no employee exists
+        }
         double maxSalary = 0.0;
                 Employee maxEmp = null;
                 for(Employee e: coll){

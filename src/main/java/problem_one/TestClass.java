@@ -19,7 +19,11 @@ public class TestClass {
 
     }
     public static double sumProducts(Product[] col) {
-        if (col == null) throw new IllegalArgumentException("Product array must not be null");
+        // Handle the case where the array is null
+        if (col == null) {
+            return 0.0; // Return 0.0 as default sum when no array is provided
+        }
+
         double sum = 0.0;
         for (Product product : col) {
             if (product != null) {
