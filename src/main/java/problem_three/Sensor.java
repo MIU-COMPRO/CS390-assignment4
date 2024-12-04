@@ -1,6 +1,6 @@
 package problem_three;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public interface Sensor {
     //Return the name of the Sensor
@@ -10,7 +10,7 @@ public interface Sensor {
     //Return the Home location where sensor deployed. [ Garden, Kitchen, etc.,]
     String getLocation();
     //Return the system current time
-    LocalDateTime getLastUpdated();
+    LocalTime getLastUpdated();
     //Return the action taken based on the Sensor alert
     String performAction();
 }

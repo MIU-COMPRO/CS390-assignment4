@@ -1,16 +1,17 @@
 package problem_three;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class LightSensor implements Sensor {
     private String location;
-    private LocalDateTime lastUpdated;
+    private LocalTime lastUpdated;
     private double lightlevel;
 
     public LightSensor(String location, double lightlevel) {
         this.location = location;
         this.lightlevel = lightlevel;
-        this.lastUpdated = LocalDateTime.now();
+        this.lastUpdated = LocalTime.now();
     }
 
     /**
@@ -41,8 +42,8 @@ public class LightSensor implements Sensor {
      * @return 
      */
     @Override
-    public LocalDateTime getLastUpdated() {
-        lastUpdated = LocalDateTime.now();
+    public LocalTime getLastUpdated() {
+        lastUpdated = LocalTime.now();
         return lastUpdated;
     }
 
@@ -61,7 +62,7 @@ public class LightSensor implements Sensor {
         return "Sensor Type: " + "Light Sensor\n" +
                 "Reading: " + lightlevel + "\n" +
                 "Location: " + location + "\n" +
-                "Last Updated: " + lastUpdated + "\n" +
+                "Last Updated: " + lastUpdated.format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
                 "Action: " + performAction() + "\n";
     }
 }

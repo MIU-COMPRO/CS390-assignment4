@@ -1,15 +1,16 @@
 package problem_three;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class TemparatureSensor implements Sensor {
     private String location;
-    private LocalDateTime lastUpdated;
+    private LocalTime lastUpdated;
     private double temperature;
     public TemparatureSensor(String location, double temperature) {
         this.location = location;
         this.temperature = temperature;
-        this.lastUpdated = LocalDateTime.now();
+        this.lastUpdated = LocalTime.now();
     }
     /**
      * @return 
@@ -39,8 +40,8 @@ public class TemparatureSensor implements Sensor {
      * @return 
      */
     @Override
-    public LocalDateTime getLastUpdated() {
-        lastUpdated = LocalDateTime.now();
+    public LocalTime getLastUpdated() {
+        lastUpdated = LocalTime.now();
         return lastUpdated;
     }
 
@@ -62,7 +63,7 @@ public class TemparatureSensor implements Sensor {
         return "Sensor Type: " + "Temperature\n" +
                 "Reading: " + temperature + "\n" +
                 "Location: " + location + "\n" +
-                "Last Updated: " + lastUpdated + "\n" +
+                "Last Updated: " + lastUpdated.format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
                 "Action: " + performAction()+ "\n";
     }
 

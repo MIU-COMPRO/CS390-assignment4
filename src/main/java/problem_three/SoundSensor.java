@@ -1,15 +1,16 @@
 package problem_three;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class SoundSensor implements Sensor {
     private String location;
-    private LocalDateTime lastUpdated;
+    private LocalTime lastUpdated;
     private double soundLevel;
     public SoundSensor(String location, double soundLevel) {
         this.location = location;
         this.soundLevel = soundLevel;
-        this.lastUpdated = LocalDateTime.now();
+        this.lastUpdated = LocalTime.now();
     }
     /**
      * @return 
@@ -39,8 +40,8 @@ public class SoundSensor implements Sensor {
      * @return 
      */
     @Override
-    public LocalDateTime getLastUpdated() {
-        lastUpdated = LocalDateTime.now();
+    public LocalTime getLastUpdated() {
+        lastUpdated = LocalTime.now();
         return lastUpdated;
     }
 
@@ -59,7 +60,7 @@ public class SoundSensor implements Sensor {
         return "Sensor Type: " + "Sound Sensor\n" +
                 "Reading: " + soundLevel + "\n" +
                 "Location: " + location + "\n" +
-                "Last Updated: " + lastUpdated + "\n" +
+                "Last Updated: " + lastUpdated.format(DateTimeFormatter.ofPattern("hh:mm a")) + "\n" +
                 "Action: " + performAction()+ "\n";
     }
 }
